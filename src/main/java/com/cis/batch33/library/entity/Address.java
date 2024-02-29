@@ -14,8 +14,13 @@ public class Address {
     private String line1;
     private String line2;
     private String city;
+
+
+
+
+
     private String state;
     private Integer zip;
-    @OneToMany(mappedBy = "address",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "address",cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     private List<LibraryMember> members;
 }
